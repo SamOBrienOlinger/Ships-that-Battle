@@ -69,3 +69,5 @@ turns = 10
 
 create_board(SECRET_BOARD)
 create_board(PLAYER_BOARD)
+
+
