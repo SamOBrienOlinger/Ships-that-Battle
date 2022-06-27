@@ -1,12 +1,21 @@
 """
 Key for map
 
-# X = position and hit
-# ' ' = free space
-# '-' = missed shot
+X = hit
+' ' = free space
+'-' = missed shot
+
+Messages for Player
+
+"Deja Vu, try a different location on the map" = enter a row number and column letter not previously used
+"Congratulations Captain, you rule the waves!" = Player wins
+"Captain, it's too late, you ran out of cannonballs" = Player loses
 
 """
 from random import randint
+
+message = ["Welcome, Captain. Enter your coordinates on the map to sink the enemy's fleet"]
+print(message)
 
 # Boards
 SECRET_BOARD = [[''] * 8 for x in range(8)]
@@ -45,7 +54,7 @@ def guess_ship_location():
         column = input('Where will you fire your cannons?!? A - H: ').upper()
     return int(row) - 1, letters_to_numbers[column]
 
-# Need a way to stop User from not inputting nothing
+# Need code that handles empty or invalid input data.
 
 
 def all_ships_hit(board):
@@ -56,7 +65,7 @@ def all_ships_hit(board):
                 count += 1
     return count
 
-
+# Tracks hits, misses and repeated coordinates 
 if __name__ == "__main__":
     random_ship_location(SECRET_BOARD)
     turns = 10
@@ -65,7 +74,7 @@ if __name__ == "__main__":
         print(PLAYER_BOARD)
         row, column = guess_ship_location()
         if SECRET_BOARD[row][column] == '-':
-            print("Deja Vu, try a different location")
+            print("Deja Vu, try a different location on the map")
         elif SECRET_BOARD[row][column] == "X":
             print("Huzzah, a hit!")
             PLAYER_BOARD[row][column] = "X"
@@ -79,7 +88,15 @@ if __name__ == "__main__":
             break
         print("Captain, you have " + str(turns) + " cannon balls left")
         if turns == 0:
-            print("You ran out of cannonballs")
+            print("Captain, it's too late, you ran out of cannonballs")
 
-create_board(SECRET_BOARD)
-create_board(PLAYER_BOARD)
+
+
+def new_game():
+        print(
+        "Welcome, Captain. Enter your coordinates on the map to sink the enemy's fleet"
+        )
+    create_board(SECRET_BOARD)
+    create_board(PLAYER_BOARD)
+
+new_game()
