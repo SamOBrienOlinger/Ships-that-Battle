@@ -7,14 +7,19 @@ X = hit
 
 Messages for Player
 
-"Deja Vu, try a different location on the map" = enter a row number and column letter not previously used
-"Congratulations Captain, you rule the waves!" = Player wins
-"Captain, it's too late, you ran out of cannonballs" = Player loses
+"Deja Vu, try a different location on the map" = \
+    enter a row number and column letter not previously used
+"Congratulations Captain, you rule the waves!" = \
+    Player wins
+"Captain, it's too late, you ran out of cannonballs" = \
+    Player loses
 
 """
 from random import randint
 
-message = ["Welcome, Captain. Enter your coordinates on the map to sink the enemy's fleet"]
+message = "Welcome, Captain. \
+    Enter your coordinates on the map \
+        to sink the enemy's fleet"
 print(message)
 
 # Boards
@@ -27,16 +32,16 @@ letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4,
 
 def create_board(board):
     print('  A B C D E F G H')
-    print('  ---------------')
+    print('  +---------------+')
     row_number = 1
     for row in board:
         print("%d|%s|" % (row_number, "|".join(row)))
         row_number += 1
-
+    print('  +---------------+')
 
 # Place 5 random ships on SECRET_BOARD
 def random_ship_location(board):
-    for ship in range(5):
+    for x in range(5):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = guess_ship_location()
@@ -65,8 +70,9 @@ def all_ships_hit(board):
                 count += 1
     return count
 
-# Tracks hits, misses and repeated coordinates 
-if __name__ == "__main__":
+
+# Tracks hits, misses and repeated coordinates
+def hits_and_misses(board):
     random_ship_location(SECRET_BOARD)
     turns = 10
     while turns > 0:
@@ -89,14 +95,12 @@ if __name__ == "__main__":
         print("Captain, you have " + str(turns) + " cannon balls left")
         if turns == 0:
             print("Captain, it's too late, you ran out of cannonballs")
-
-
+# hits_and_misses()
 
 def new_game():
-        print(
-        "Welcome, Captain. Enter your coordinates on the map to sink the enemy's fleet"
-        )
+    print("Hi Alex")
     create_board(SECRET_BOARD)
     create_board(PLAYER_BOARD)
+
 
 new_game()
