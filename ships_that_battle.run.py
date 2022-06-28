@@ -18,8 +18,8 @@ Messages for Player
 from random import randint
 
 message = "Welcome, Captain. \
-    Enter your coordinates on the map \
-        to sink the enemy's fleet"
+Enter your coordinates on the map \
+to sink the enemy's fleet"
 print(message)
 
 # Boards
@@ -31,13 +31,13 @@ letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4,
 
 
 def create_board(board):
-    print('  A B C D E F G H')
-    print('  +---------------+')
+    print('    A  B  C  D  E  F  G  H')
+    print('  +-----------------------+')
     row_number = 1
     for row in board:
-        print("%d|%s|" % (row_number, "|".join(row)))
+        print("%d  | %s |" % (row_number, " | ".join(row)))
         row_number += 1
-    print('  +---------------+')
+    print('  +-----------------------+')
 
 # Place 5 random ships on SECRET_BOARD
 def random_ship_location(board):
@@ -95,7 +95,11 @@ def hits_and_misses(board):
         print("Captain, you have " + str(turns) + " cannon balls left")
         if turns == 0:
             print("Captain, it's too late, you ran out of cannonballs")
-# hits_and_misses()
+# hits_and_misses(board)
+
+
+
+
 
 def new_game():
     print("Hi Alex")
