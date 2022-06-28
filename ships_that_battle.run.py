@@ -29,15 +29,16 @@ PLAYER_BOARD = [[''] * 8 for x in range(8)]
 letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4,
                       'F': 5, 'G': 6, 'H': 7}
 
+# board = SECRET_BOARD, PLAYER_BOARD
 
 def create_board(board):
     print('    A  B  C  D  E  F  G  H')
-    print('  +-----------------------+')
+    print('   +-----------------------+')
     row_number = 1
     for row in board:
         print("%d  | %s |" % (row_number, " | ".join(row)))
         row_number += 1
-    print('  +-----------------------+')
+    print('   +-----------------------+')
 
 # Place 5 random ships on SECRET_BOARD
 def random_ship_location(board):
@@ -59,8 +60,8 @@ def guess_ship_location():
         column = input('Where will you fire your cannons?!? A - H: ').upper()
     return int(row) - 1, letters_to_numbers[column]
 
-# Need code that handles empty or invalid input data.
 
+# Need code that handles empty or invalid input data.
 
 def all_ships_hit(board):
     count = 0
@@ -72,11 +73,11 @@ def all_ships_hit(board):
 
 
 # Tracks hits, misses and repeated coordinates
-def hits_and_misses(board):
+def hits_and_misses():
     random_ship_location(SECRET_BOARD)
     turns = 10
     while turns > 0:
-        print("Fire at the Enemy to Battle their Ships")
+        print("Fire at the Enemy to sink their ships")
         print(PLAYER_BOARD)
         row, column = guess_ship_location()
         if SECRET_BOARD[row][column] == '-':
@@ -94,17 +95,23 @@ def hits_and_misses(board):
             break
         print("Captain, you have " + str(turns) + " cannon balls left")
         if turns == 0:
-            print("Captain, it's too late, you ran out of cannonballs")
+            print("Captain, it's too late, you ran out of cannonballs.\
+            GAME OVER!")
+
+         
 # hits_and_misses(board)
 
 
-
-
-
 def new_game():
-    print("Hi Alex")
     create_board(SECRET_BOARD)
     create_board(PLAYER_BOARD)
 
 
 new_game()
+
+guess_ship_location()
+
+hits_and_misses()
+# hits_and_misses(board=PLAYER_BOARD)
+
+# create_board(PLAYER_BOARD)
