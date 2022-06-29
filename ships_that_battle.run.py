@@ -21,7 +21,8 @@ from random import randint
 def print_message(name):
     print(f"Welcome Captain {name}")
 
-username = input("What's your name? ")
+
+username = input("Captain, what's your name? ")
 print_message(username)
 
 
@@ -33,31 +34,31 @@ to sink the enemy's fleet.\
 print(message)
 
 # Boards
-SECRET_BOARD = [[''] * 8 for x in range(8)]
-PLAYER_BOARD = [[''] * 8 for x in range(8)]
+secret_board = [[' '] * 8 for x in range(8)]
+player_board = [[' '] * 8 for x in range(8)]
 
 letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4,
                       'F': 5, 'G': 6, 'H': 7}
 
-# board = SECRET_BOARD, PLAYER_BOARD
+# board = secret_board, player_board
 
 
 def create_board(board):
-    print('    A  B  C  D  E  F  G  H')
-    print('   +-----------------------+')
+    print('    A   B   C   D   E   F   G   H')
+    print('  +-------------------------------+')
     row_number = 1
     for row in board:
-        print("%d  | %s |" % (row_number, " | ".join(row)))
+        print("%d | %s | " % (row_number, " | ".join(row)))
         row_number += 1
-    print('   +-----------------------+')
+    print('  +-------------------------------+')
 
 
-# Place 5 random ships on SECRET_BOARD
+# Place 5 random ships on secret_board
 def random_ship_location(board):
-    for x in range(5):
+    for ship in range(5):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
         while board[ship_row][ship_column] == 'X':
-            ship_row, ship_column = guess_ship_location()
+            ship_row, ship_column = randint(0, 7), randint(0, 7)
     board[ship_row][ship_column] = 'X'
 
 
@@ -75,6 +76,7 @@ def guess_ship_location():
 
 # Tracks and adds up hits
 
+
 def all_ships_hit(board):
     count = 0
     for row in board:
@@ -85,22 +87,22 @@ def all_ships_hit(board):
 
 
 # Tracks hits, misses and repeated coordinates
-random_ship_location(SECRET_BOARD)
-create_board(SECRET_BOARD)
+random_ship_location(secret_board)
 turns = 3
+create_board(secret_board)
 while turns > 0:
     print("Fire at the Enemy to sink their ships")
-    create_board(PLAYER_BOARD)
+    create_board(player_board)
     row, column = guess_ship_location()
-    if PLAYER_BOARD[row][column] == '-':
+    if player_board[row][column] == '-':
         print("Deja Vu, try a different location on the map")
-    elif SECRET_BOARD[row][column] == 'X':
+    elif secret_board[row][column] == 'X':
         print("Huzzah, a hit!")
-        PLAYER_BOARD[row][column] = 'X'
+        player_board[row][column] = 'X'
         turns -= 1
     else:
         print("A miss, and a splash. Better luck next turn!")
-        PLAYER_BOARD[row][column] = "-"
+        player_board[row][column] = "-"
         turns -= 1
     if all_ships_hit == 5:
         print("Congratulations Captain, you rule the waves!")
@@ -110,18 +112,10 @@ while turns > 0:
         print("Captain, it's too late, you ran out of cannonballs.\
         GAME OVER!")
 
-# hits_and_misses(board)
-
 
 def new_game():
-    create_board(SECRET_BOARD)
+    create_board(secret_board)
+    create_board(player_board)
+
 
 new_game()
-
-
-# all_ships_hit(board=)
-
-# print(hits_and_misses(PLAYER_BOARD))
-# hits_and_misses(board=PLAYER_BOARD)
-
-# create_board(PLAYER_BOARD)
