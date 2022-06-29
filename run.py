@@ -22,7 +22,7 @@ def print_message(name):
     print(f"Welcome Captain {name}")
 
 
-username = input("Captain, what's your name? "\n)
+username = input("Captain, what's your name? \n")
 print_message(username)
 
 
@@ -72,14 +72,14 @@ def guess_ship_location():
     '''
     This function checks that input is valid and returns coordinates
     '''
-    row = input('Captain, where will you fire your cannons?!? 1 - 8: ')
+    row = input('Captain, where will you fire your cannons?!? 1 - 8: \n')
     while row not in '12345678':
         print("Your shots must be fired on the map, between rows 1 - 8")
-        row = input('Where will you fire your cannons?!? row 1 - 8: ')
-    column = input('Where will you fire your cannons?!? A - H: ').upper()
+        row = input('Where will you fire your cannons?!? row 1 - 8: \n')
+    column = input('Where will you fire your cannons?!? A - H: \n').upper()
     while column not in 'ABCDEFGH':
         print("Your shots must fired on the map, between A - H")
-        column = input('Where will you fire your cannons?!? A - H: ').upper()
+        column = input('Where will you fire your cannons?!? A - H: \n').upper()
     return int(row) - 1, letters_to_numbers[column]
 
 
