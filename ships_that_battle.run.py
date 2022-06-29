@@ -72,7 +72,7 @@ def guess_ship_location():
     '''
     This function checks that input is valid and returns coordinates
     '''
-    row = input('Where will you fire your cannons?!? 1 - 8: ')
+    row = input('Captain, where will you fire your cannons?!? 1 - 8: ')
     while row not in '12345678':
         print("Your shots must be fired on the map, between rows 1 - 8")
         row = input('Where will you fire your cannons?!? row 1 - 8: ')
