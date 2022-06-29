@@ -22,7 +22,7 @@ def print_message(name):
     print(f"Welcome Captain {name}")
 
 
-username = input("Captain, what's your name? ")
+username = input("Captain, what's your name? "\n)
 print_message(username)
 
 
