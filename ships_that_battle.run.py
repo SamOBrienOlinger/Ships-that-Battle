@@ -61,7 +61,7 @@ def random_ship_location(board):
     board[ship_row][ship_column] = 'X'
 
 
-# Checks that in put is valid and returns input
+# Checks that input is valid and returns input
 def guess_ship_location():
     row = input('Where will you fire your cannons?!? 1 - 8: ')
     while row not in '12345678':
@@ -72,7 +72,6 @@ def guess_ship_location():
         print("Your shots must fired on the map, between A - H")
         column = input('Where will you fire your cannons?!? A - H: ').upper()
     return int(row) - 1, letters_to_numbers[column]
-
 
 # Tracks and adds up hits
 
@@ -86,30 +85,30 @@ def all_ships_hit(board):
 
 
 # Tracks hits, misses and repeated coordinates
-def hits_and_misses():
-    random_ship_location(SECRET_BOARD)
-    turns = 3
-    while turns > 0:
-        print("Fire at the Enemy to sink their ships")
-        print(PLAYER_BOARD)
-        row, column = guess_ship_location()
-        if SECRET_BOARD[row][column] == '-':
-            print("Deja Vu, try a different location on the map")
-        elif SECRET_BOARD[row][column] == 'X':
-            print("Huzzah, a hit!")
-            PLAYER_BOARD[row][column] = 'X'
-            turns -= 1
-        else:
-            print("A miss, and a splash. Better luck next turn!")
-            SECRET_BOARD[row][column] = "-"
-            turns -= 1
-        if all_ships_hit == 5:
-            print("Congratulations Captain, you rule the waves!")
-            break
-        print("Captain, you have " + str(turns) + " cannon balls left")
-        if turns == 0:
-            print("Captain, it's too late, you ran out of cannonballs.\
-            GAME OVER!")
+random_ship_location(SECRET_BOARD)
+create_board(SECRET_BOARD)
+turns = 3
+while turns > 0:
+    print("Fire at the Enemy to sink their ships")
+    create_board(PLAYER_BOARD)
+    row, column = guess_ship_location()
+    if PLAYER_BOARD[row][column] == '-':
+        print("Deja Vu, try a different location on the map")
+    elif SECRET_BOARD[row][column] == 'X':
+        print("Huzzah, a hit!")
+        PLAYER_BOARD[row][column] = 'X'
+        turns -= 1
+    else:
+        print("A miss, and a splash. Better luck next turn!")
+        PLAYER_BOARD[row][column] = "-"
+        turns -= 1
+    if all_ships_hit == 5:
+        print("Congratulations Captain, you rule the waves!")
+        break
+    print("Captain, you have " + str(turns) + " cannon balls left")
+    if turns == 0:
+        print("Captain, it's too late, you ran out of cannonballs.\
+        GAME OVER!")
 
 # hits_and_misses(board)
 
@@ -117,14 +116,10 @@ def hits_and_misses():
 def new_game():
     create_board(SECRET_BOARD)
 
-
 new_game()
 
-guess_ship_location()
 
 # all_ships_hit(board=)
-
-hits_and_misses()
 
 # print(hits_and_misses(PLAYER_BOARD))
 # hits_and_misses(board=PLAYER_BOARD)
