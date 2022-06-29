@@ -40,10 +40,12 @@ player_board = [[' '] * 8 for x in range(8)]
 letters_to_numbers = {'A': 0, 'B': 1, 'C': 2, 'D': 3, 'E': 4,
                       'F': 5, 'G': 6, 'H': 7}
 
-# board = secret_board, player_board
-
 
 def create_board(board):
+    '''
+    This function creates the layout of the board
+    '''
+    
     print('    A   B   C   D   E   F   G   H')
     print('  +-------------------------------+')
     row_number = 1
@@ -53,8 +55,11 @@ def create_board(board):
     print('  +-------------------------------+')
 
 
-# Place 5 random ships on secret_board
+
 def random_ship_location(board):
+    '''
+    This function places 5 ships at random on secret_board
+    '''
     for ship in range(5):
         ship_row, ship_column = randint(0, 7), randint(0, 7)
         while board[ship_row][ship_column] == 'X':
@@ -62,8 +67,11 @@ def random_ship_location(board):
     board[ship_row][ship_column] = 'X'
 
 
-# Checks that input is valid and returns input
+
 def guess_ship_location():
+    '''
+    This function checks that input is valid and returns coordinates
+    '''
     row = input('Where will you fire your cannons?!? 1 - 8: ')
     while row not in '12345678':
         print("Your shots must be fired on the map, between rows 1 - 8")
@@ -74,10 +82,11 @@ def guess_ship_location():
         column = input('Where will you fire your cannons?!? A - H: ').upper()
     return int(row) - 1, letters_to_numbers[column]
 
-# Tracks and adds up hits
-
 
 def all_ships_hit(board):
+    '''
+    This function tracks and adds up hits
+    '''
     count = 0
     for row in board:
         for column in row:
