@@ -1,6 +1,6 @@
 #Ships that Battle
 
-# ** Ships that Battle**
+# **Ships that Battle**
 
 For my third Portfolio Project submitted as part of the Code Institute's Diploma in full-stack software development course, I created a board game, commonly known as battleship, called ' Ships that Battle'. This is a Python terminal that runs using the Code Institute mock terminal on Heroku.   
 
@@ -37,3 +37,12 @@ The player must guess the coordinates of the hidden ships by choosing a row numb
 Hits are indicted by ‘X’ and misses ‘-‘
 
 If the player hits all of the computer’s ships they win the game. If they fire all of their cannonballs and fail to do so, they lose the game.  
+
+## **[Features](#features)**
+
+# Existing features
+* Random board generation
+  * Ships are randomly placed on the board by the computer so that the player cannot see where they are (change code on line 101)
+
+  ![player board](images/README.md-player-board.png)
+

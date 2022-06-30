@@ -98,7 +98,7 @@ def all_ships_hit(board):
 # Tracks hits, misses and repeated coordinates
 random_ship_location(secret_board)
 turns = 3
-create_board(secret_board)
+
 while turns > 0:
     print("Fire at the Enemy to sink their ships")
     create_board(player_board)
