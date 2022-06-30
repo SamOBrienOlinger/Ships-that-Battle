@@ -1,31 +1,39 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+#Ships that Battle
 
-Welcome SamOBrienOlinger,
+# ** Ships that Battle**
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+For my third Portfolio Project submitted as part of the Code Institute's Diploma in full-stack software development course, I created a board game, commonly known as battleship, called ' Ships that Battle'. This is a Python terminal that runs using the Code Institute mock terminal on Heroku.   
 
-## Reminders
+![Website on multiple screens](assets/README.md-images/README.md-multiple-screens.png)
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+- **[Click Here]( https://ships-that-battle.herokuapp.com/)** to see the deployed website. 
 
-## Creating the Heroku app
+- To view the repository on Github **[Click Here](https://github.com/SamOBrienOlinger/Ships-that-Battle)**.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## **Summary**
+  This interactive game provides users with an easy way to 'fire cannonballs' at a computer ‘enemy’s fleet of ships’. The game is based on the well-known board game ‘Battleship’, to learn more about this game [Click Here]( https://en.wikipedia.org/wiki/Battleship_(game).
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
+## **[Contents](#contents)**
 
-## Constraints
+1.	**[How to Play](#how-to-play)**
+2.	**[Features](#features)**
+3.	**[Features Left to Implement](#features-left-to-implement)**
+4.	**[Data Model](#data-model)**
+5.	**[Testing](#testing)**
+6.	**[Bugs](#bugs)**
+7.	**[Deployment](#deployment)**
+8.	**[Credits](#credits)**
+9.	**[Acknowledgements](#acknowledgements)** 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+## **[How to Play](#how-to-play)**
 
------
-Happy coding!
+In this version of the classic Battleship game, the player enters their name and an empty board is displayed. Five randomly located ships are generated which the player cannot see. 
+
+The player must guess the coordinates of the hidden ships by choosing a row number and a column letter. The player has ten ‘cannonballs’ or turns to take in order to ‘hit’ the hidden ships. 
+
+Hits are indicted by ‘X’ and misses ‘-‘
+
+If the player hits all of the computer’s ships they win the game. If they fire all of their cannonballs and fail to do so, they lose the game.  
