@@ -146,9 +146,9 @@ def new_game():
             break
 
         print(
-            "Captain, you have "
-            + str(MAX_TURNS - turn_count)
-            + " cannon balls left"
+            "Captain, you have " +
+            str(MAX_TURNS - turn_count) +
+            " cannon balls left"
         )
         if turn_count == MAX_TURNS:
             print(GAME_OVER_MESSAGE)
