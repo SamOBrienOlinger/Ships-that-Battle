@@ -44,5 +44,17 @@ If the player hits all of the computer’s ships they win the game. If they fire
 * Random board generation
   * Ships are randomly placed on the board by the computer so that the player cannot see where they are (change code on line 101)
 
+
   ![player board](images/README.md-player-board.png)
+
+  * Accepts player’s input
+
+  * Validates coordinates input by player
+
+  * Tells player if they input invalid values or the same values more than once
+
+  ![inout validation](images/README.md-input-validation.png)
+
+  
+
 
