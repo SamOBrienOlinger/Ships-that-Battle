@@ -55,7 +55,6 @@ def create_board(board):
     print('  +-------------------------------+')
 
 
-
 def random_ship_location(board):
     '''
     This function places 5 ships at random on secret_board
@@ -65,7 +64,6 @@ def random_ship_location(board):
         while board[ship_row][ship_column] == 'X':
             ship_row, ship_column = randint(0, 7), randint(0, 7)
     board[ship_row][ship_column] = 'X'
-
 
 
 def guess_ship_location():
@@ -99,6 +97,8 @@ def all_ships_hit(board):
 random_ship_location(secret_board)
 turns = 3
 
+# remove this function call
+create_board(secret_board)
 while turns > 0:
     print("Fire at the Enemy to sink their ships")
     create_board(player_board)
