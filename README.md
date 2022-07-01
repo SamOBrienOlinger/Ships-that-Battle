@@ -1,10 +1,8 @@
-#Ships that Battle
-
 # **Ships that Battle**
 
 For my third Portfolio Project submitted as part of the Code Institute's Diploma in full-stack software development course, I created a board game, commonly known as battleship, called ' Ships that Battle'. This is a Python terminal that runs using the Code Institute mock terminal on Heroku.   
 
-![Website on multiple screens](assets/README.md-images/README.md-multiple-screens.png)
+![Responsivity on multiple screens](assets/images/README.md-responsive.png)
 
 - **[Click Here]( https://ships-that-battle.herokuapp.com/)** to see the deployed website. 
 
@@ -12,7 +10,7 @@ For my third Portfolio Project submitted as part of the Code Institute's Diploma
 
 
 ## **Summary**
-  This interactive game provides users with an easy way to 'fire cannonballs' at a computer ‘enemy’s fleet of ships’. The game is based on the well-known board game ‘Battleship’, to learn more about this game [Click Here]( https://en.wikipedia.org/wiki/Battleship_(game).
+  This interactive game provides users with an easy way to 'fire cannonballs' at a computer ‘enemy’s fleet of ships’. The game is based on the well-known board game ‘Battleship’, to learn more about this game **[Click Here]( https://en.wikipedia.org/wiki/Battleship_game)**.
 
 
 
@@ -47,13 +45,13 @@ If the player hits all of the computer’s ships they win the game. If they fire
 
   ![player board](assets/images/README.md-player-board.png)
 
-  * Accepts player’s input.
+* Accepts player’s input.
 
-  * Validates coordinates input by player.
+* Validates coordinates input by player.
 
-  * Tells player if they input invalid values or the same values more than once.
+* Tells player if they input invalid values or the same values more than once.
 
-  * Tells player how many turns or 'cannon balls' they have left.
+* Tells player how many turns or 'cannon balls' they have left.
 
   ![input validation](assets/images/README.md-input-validation.png)
 
