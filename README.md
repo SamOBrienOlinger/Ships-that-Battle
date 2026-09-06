@@ -16,7 +16,7 @@ A terminal Battleship-style game written in Python, with a browser-terminal wrap
 
 ## Getting started
 
-Requires Python 3. The terminal game uses the standard library.
+Requires Git, Python 3. The terminal game uses the standard library.
 
 ```bash
 git clone https://github.com/SamOBrienOlinger/Ships-that-Battle.git
