@@ -4,7 +4,7 @@ A terminal Battleship-style game written in Python, with a browser-terminal wrap
 
 **Python · Terminal game**
 
-[Getting started](#getting-started) · [Repository guide](#repository-guide) · [Checks](#checks-and-review) · [Credits](#credits-and-reuse)
+[Getting started](#getting-started) · [Data model](#entity-relationship-diagram) · [Repository guide](#repository-guide) · [Checks](#checks-and-review) · [Credits](#credits-and-reuse)
 
 ## What you can explore
 
@@ -13,6 +13,35 @@ A terminal Battleship-style game written in Python, with a browser-terminal wrap
 - Inspect the Python game separately from the Node.js web wrapper.
 
 > **Project notes:** The package.json test script is a placeholder. The simplest local entry point is the Python game; the browser wrapper is a separate hosting integration.
+
+## Entity relationship diagram
+
+The Python game keeps two 8 × 8 boards in memory. The secret board places five ships in distinct cells, and the player board marks the coordinates that have been hit or missed. The player also has a running turn count. [Python game](run.py)
+
+```mermaid
+erDiagram
+    accTitle: Terminal battle boards and cell state
+    accDescr: Each game has a secret board and a player board. The secret board records ship locations, and the player board records hits and misses.
+    Game ||--|| "Secret Board" : hides
+    Game ||--|| "Player Board" : shows
+    "Secret Board" ||--|{ "Secret Cell" : contains
+    "Player Board" ||--|{ "Player Cell" : contains
+
+    Game {
+        string username
+        int turn_count
+    }
+    "Secret Cell" {
+        int row
+        int column
+        string mark "Ship or empty"
+    }
+    "Player Cell" {
+        int row
+        int column
+        string mark "Hit, miss or untried"
+    }
+```
 
 ## Getting started
 
