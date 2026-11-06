@@ -18,30 +18,7 @@ A terminal Battleship-style game written in Python, with a browser-terminal wrap
 
 The Python game keeps two 8 × 8 boards in memory. The secret board places five ships in distinct cells, and the player board marks the coordinates that have been hit or missed. The player also has a running turn count. [Python game](run.py)
 
-```mermaid
-erDiagram
-    accTitle: Terminal battle boards and cell state
-    accDescr: Each game has a secret board and a player board. The secret board records ship locations, and the player board records hits and misses.
-    Game ||--|| "Secret Board" : hides
-    Game ||--|| "Player Board" : shows
-    "Secret Board" ||--|{ "Secret Cell" : contains
-    "Player Board" ||--|{ "Player Cell" : contains
-
-    Game {
-        string username
-        int turn_count
-    }
-    "Secret Cell" {
-        int row
-        int column
-        string mark "Ship or empty"
-    }
-    "Player Cell" {
-        int row
-        int column
-        string mark "Hit, miss or untried"
-    }
-```
+[![Each game has a secret board and a player board. The secret board records ship locations, and the player board records hits and misses.](docs/diagrams/terminal-battle-boards-and-cell-state.svg)](docs/diagrams/terminal-battle-boards-and-cell-state.svg)
 
 ## Getting started
 
